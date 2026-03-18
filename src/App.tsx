@@ -15,6 +15,7 @@ import { IoMdPizza } from 'react-icons/io';
 import { GiClothes, GiFlowers } from 'react-icons/gi';
 import { BsShopWindow } from 'react-icons/bs';
 import toast, { Toaster } from 'react-hot-toast';
+import myPhoto from './assets/foto.jpeg'
 
 // Функция для уведомлений
 const notify = (message: string) => {
@@ -282,8 +283,12 @@ const About: React.FC = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
-          <div className="w-40 h-40 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center text-6xl shadow-lg">
-            🦸
+          <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg flex-shrink-0 border-4 border-blue-100">
+            <img 
+              src={myPhoto} 
+              alt="Полина - основатель e-not"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -302,7 +307,7 @@ const CallToAction: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    notify(`Спасибо, ${name || 'гость'}! Мы свяжемся с вами в ближайшее время.`);
+    notify(`Спасибо, ${name || 'гость'}! Я свяжусь с вами в ближайшее время.`);
     setName('');
     setContact('');
   };
@@ -311,7 +316,7 @@ const CallToAction: React.FC = () => {
     <section className="py-16 bg-gradient-to-b from-blue-600 to-indigo-700 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Готовы продавать там, где ваши клиенты?</h2>
-        <p className="text-lg opacity-90 mb-8">Оставьте заявку, и мы в течение дня подключим ваш магазин.</p>
+        <p className="text-lg opacity-90 mb-8">Оставьте заявку, и я в течение дня подключу ваш магазин.</p>
 
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
           <Input
@@ -337,7 +342,7 @@ const CallToAction: React.FC = () => {
             Хочу попробовать
           </Button>
         </form>
-        <p className="text-sm opacity-75 mt-4">Или напишите мне лично: @polina_demo (telegram)</p>
+        <p className="text-sm opacity-75 mt-4">Или напишите мне лично: @teplovata (telegram)</p>
       </div>
     </section>
   );
