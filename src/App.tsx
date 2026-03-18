@@ -356,7 +356,8 @@ const Footer: React.FC = () => {
           <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-sm">🦝</div>
           <span className="font-bold text-lg">e-not</span>
         </div>
-        <p className="text-gray-400 text-sm">© 2024 Мини-приложение для продаж в мессенджерах.</p>
+        <p className="text-gray-400 text-sm">© 2026 Мини-приложение для продаж в мессенджерах.</p>
+        <p className="text-gray-400 text-sm">И да, этот сайт визитку я тоже сама написала, без мам, пап и Тильды</p>
       </div>
     </footer>
   );
