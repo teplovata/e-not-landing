@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Input } from 'antd';
 import {
   FaTelegram,
-  FaVk,
+//  FaVk,
   FaCheckCircle,
   FaArrowRight,
   FaShoppingCart,
