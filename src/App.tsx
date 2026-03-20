@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { Button, Input } from 'antd';
 import {
   FaTelegram,
-//  FaVk,
   FaCheckCircle,
   FaArrowRight,
   FaShoppingCart,
-  FaRocket,
   FaRegSmile,
 } from 'react-icons/fa';
-import { SiVk, SiGooglemessages } from 'react-icons/si';
-import { HiOutlineSparkles } from 'react-icons/hi';
+import { SiVk } from 'react-icons/si';
 import { IoMdPizza } from 'react-icons/io';
 import { GiClothes, GiFlowers } from 'react-icons/gi';
 import { BsShopWindow } from 'react-icons/bs';
@@ -40,7 +37,7 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-lg">
+          <div className="w-8 h-8 bg-linear-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-lg">
             🦝
           </div>
           <span className="font-bold text-xl text-gray-800">e-not</span>
@@ -52,7 +49,7 @@ const Header: React.FC = () => {
             onClick={() => notify('Скоро здесь будет демо!')}
             className="hidden sm:inline-flex"
           >
-            Посмотреть как работает
+            Как работает
           </Button>
           <Button
             type="primary"
@@ -69,13 +66,13 @@ const Header: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-white py-12 md:py-20">
+    <section className="bg-linear-to-b from-blue-50 to-white py-12 md:py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
               Продавайте в Telegram, MAX и VK <br />
-              <span className="text-blue-600">без комиссий и потери клиентов.</span>
+              <span className="text-blue-600">без комиссий и потери клиентов</span>
             </h1>
             <p className="text-lg text-gray-600 mt-4">
               Ваш интернет-магазин внутри любимых мессенджеров. Один клик — и заказ оформлен, покупатель не уходит из чата.
@@ -86,7 +83,6 @@ const Hero: React.FC = () => {
                 size="large"
                 onClick={() => notify('Начинаем тестирование!')}
                 className="bg-blue-500 hover:bg-blue-600 text-base h-auto py-3 px-8"
-                icon={<FaRocket className="mr-2" />}
               >
                 Попробовать бесплатно
               </Button>
@@ -107,7 +103,7 @@ const Hero: React.FC = () => {
 
 const Problem: React.FC = () => {
   const items: ProblemItem[] = [
-    { icon: <FaShoppingCart className="text-red-500" />, title: 'Маркетплейсы берут 20%', desc: 'Вы работаете в убыток или задираете цены.' },
+    { icon: <FaShoppingCart className="text-red-500" />, title: 'Маркетплейсы берут до 50%', desc: 'Вы работаете в убыток или задираете цены.' },
     { icon: <FaArrowRight className="text-orange-500" />, title: 'Переходы на сайты убивают конверсию', desc: 'Покупатель ушел по ссылке и не вернулся (залип в ленте).' },
     { icon: <FaRegSmile className="text-yellow-500" />, title: 'Свой интернет-магазин сложно продвигать', desc: 'Никто не вбивает адрес вручную.' },
   ];
@@ -137,7 +133,7 @@ const Problem: React.FC = () => {
 
 const Solution: React.FC = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-indigo-50 to-blue-50">
+    <section className="py-16 bg-linear-to-r from-indigo-50 to-blue-50">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Встречайте — мини-приложение e-not.
@@ -145,17 +141,6 @@ const Solution: React.FC = () => {
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Это не ссылка на сайт. Это полноценный магазин, который живет прямо в вашем канале или чате. Клик — и корзина открывается, не выходя из мессенджера.
         </p>
-        <div className="mt-8">
-          <Button
-            type="link"
-            size="large"
-            onClick={() => notify('Открываю демо-магазин...')}
-            className="text-blue-600 text-lg"
-            icon={<HiOutlineSparkles />}
-          >
-            👉 Нажмите сюда, чтобы увидеть, как ваши клиенты будут покупать ваш товар.
-          </Button>
-        </div>
         <div className="mt-8 max-w-md mx-auto bg-white p-4 rounded-2xl shadow-lg border">
           <p className="text-gray-500 mb-2">🖼️ Видео / гифка с работой магазина</p>
           <div className="bg-gray-200 h-32 rounded-lg flex items-center justify-center">
@@ -186,7 +171,7 @@ const KillerFeature: React.FC = () => {
               <FaArrowRight className="text-gray-400 text-xl" />
               <div className="bg-white p-3 rounded-full shadow-md"><SiVk className="text-3xl text-blue-600" /></div>
               <FaArrowRight className="text-gray-400 text-xl" />
-              <div className="bg-white p-3 rounded-full shadow-md"><SiGooglemessages className="text-3xl text-blue-400" /></div>
+              <div className="bg-white p-3 rounded-full shadow-md"><img src="./public/max-logo.png" className='w-8 h-8'/></div>
             </div>
             <p className="text-sm text-gray-500 mt-4">Ваше облако e-not</p>
             <p className="text-xs text-gray-400">Технологично и надежно</p>
@@ -200,7 +185,7 @@ const KillerFeature: React.FC = () => {
 const HowItWorks: React.FC = () => {
   const steps: string[] = [
     'Оставляете заявку.',
-    'Я подключаю ваш магазин на своей стороне.',
+    'Мы подключаем ваш магазин на своей стороне.',
     'Загружаете товары в простой админке.',
     'Получаете ссылку на мини-приложение и встраиваете её в описание канала / закрепляете сообщение.',
     'Продаете!',
@@ -215,7 +200,7 @@ const HowItWorks: React.FC = () => {
         <div className="max-w-2xl mx-auto mt-10">
           {steps.map((step, index) => (
             <div key={index} className="flex items-start space-x-4 mb-4">
-              <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">{index + 1}</div>
+              <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold">{index + 1}</div>
               <p className="text-gray-700 text-lg">{step}</p>
             </div>
           ))}
@@ -263,11 +248,11 @@ const Pricing: React.FC = () => {
           <h3 className="text-2xl font-semibold text-gray-800">Старт (Полный доступ)</h3>
           <div className="text-4xl font-bold text-blue-600 my-4">5 000 ₽<span className="text-lg text-gray-500">/мес</span></div>
           <ul className="text-left space-y-3 mt-6">
-            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" /><span>✔ Магазин в Telegram, VK, Max.</span></li>
-            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" /><span>✔ Неограниченное кол-во товаров.</span></li>
-            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" /><span>✔ Прием платежей.</span></li>
-            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" /><span>✔ Простая админка.</span></li>
-            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" /><span>✔ Поддержка при подключении.</span></li>
+            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 shrink-0" /><span>Магазин в Telegram, VK, Max.</span></li>
+            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 shrink-0" /><span>Неограниченное кол-во товаров.</span></li>
+            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 shrink-0" /><span>Прием платежей.</span></li>
+            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 shrink-0" /><span>Простая админка.</span></li>
+            <li className="flex items-start gap-2"><FaCheckCircle className="text-green-500 mt-1 shrink-0" /><span>Поддержка при подключении.</span></li>
           </ul>
           <div className="mt-8 bg-yellow-100 text-yellow-800 p-3 rounded-lg text-sm font-medium">
             🎁 Первым 10 клиентам — настройка в подарок и месяц бесплатно!
@@ -283,7 +268,7 @@ const About: React.FC = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
-          <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg flex-shrink-0 border-4 border-blue-100">
+          <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-blue-100">
             <img 
               src={myPhoto} 
               alt="Полина - основатель e-not"
@@ -292,7 +277,7 @@ const About: React.FC = () => {
           </div>
           <div>
             <p className="text-lg text-gray-700 leading-relaxed">
-              «Я — Полина. 7 лет в маркетинге, знаю, как бесят потери клиентов и высокие комиссии. Ушла из найма, выучила код (да, это возможно!) и с поддержкой мужа-программиста написала идеальный инструмент для продаж в мессенджерах. Сама подключаю, сама поддерживаю, сама отвечаю за результат».
+              «Я — Полина. 7 лет в маркетинге, знаю, как бесят потери клиентов и высокие комиссии. Ушла из найма, изучаю код и с поддержкой мужа-программиста написала идеальный инструмент для продаж в мессенджерах. Сама подключаю, сама поддерживаю, сама отвечаю за результат».
             </p>
           </div>
         </div>
@@ -304,45 +289,114 @@ const About: React.FC = () => {
 const CallToAction: React.FC = () => {
   const [name, setName] = useState<string>('');
   const [contact, setContact] = useState<string>('');
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  // ВАШ КЛЮЧ С WEB3FORMS (замените на свой)
+  const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    notify(`Спасибо, ${name || 'гость'}! Я свяжусь с вами в ближайшее время.`);
-    setName('');
-    setContact('');
+    setIsSubmitting(true);
+
+    // Создаем FormData для отправки
+    const formData = new FormData();
+    formData.append('access_key', ACCESS_KEY);
+    formData.append('name', name);
+    formData.append('contact', contact);
+    formData.append('from_name', 'e-not Лендинг');
+    formData.append('subject', 'Новая заявка с e-not');
+    
+    // Honeypot для защиты от спама
+    formData.append('botcheck', '');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        toast.success('Спасибо! Заявка отправлена. Я свяжусь с вами в ближайшее время.', {
+          duration: 5000
+        });
+        setName('');
+        setContact('');
+        
+        // Сброс статуса успеха через 5 секунд
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        throw new Error(data.message || 'Ошибка отправки');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error('Ошибка при отправке. Попробуйте позже или напишите в Telegram.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-600 to-indigo-700 text-white">
+    <section className="py-16 bg-linear-to-b from-blue-600 to-indigo-700 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Готовы продавать там, где ваши клиенты?</h2>
         <p className="text-lg opacity-90 mb-8">Оставьте заявку, и я в течение дня подключу ваш магазин.</p>
 
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-          <Input
-            placeholder="Ваше имя"
-            value={name}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-            className="h-12 text-gray-800"
-            size="large"
-          />
-          <Input
-            placeholder="Telegram / WhatsApp"
-            value={contact}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setContact(e.target.value)}
-            className="h-12 text-gray-800"
-            size="large"
-          />
-          <Button
-            type="primary"
-            htmlType="submit"
-            size="large"
-            className="w-full bg-white text-blue-600 hover:bg-gray-100 border-none h-12 text-base font-semibold"
-          >
-            Хочу попробовать
-          </Button>
-        </form>
-        <p className="text-sm opacity-75 mt-4">Или напишите мне лично: @teplovata (telegram)</p>
+        {isSuccess ? (
+          <div className="max-w-md mx-auto bg-green-500/20 border border-green-300 rounded-lg p-6">
+            <FaCheckCircle className="text-5xl text-green-300 mx-auto mb-3" />
+            <p className="text-xl font-medium">Заявка отправлена!</p>
+            <p className="text-sm opacity-90 mt-2">Я свяжусь с вами в ближайшее время.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col gap-4">
+            {/* Honeypot поле для защиты от спама */}
+            <input 
+              type="checkbox" 
+              name="botcheck" 
+              className="hidden" 
+              style={{ display: 'none' }} 
+              tabIndex={-1}
+              autoComplete="off"
+            />
+            
+            <Input
+              placeholder="Ваше имя"
+              value={name}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+              className="h-12 text-gray-800"
+              size="large"
+              required
+              disabled={isSubmitting}
+            />
+            <Input
+              placeholder="Telegram / WhatsApp"
+              value={contact}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setContact(e.target.value)}
+              className="h-12 text-gray-800"
+              size="large"
+              required
+              disabled={isSubmitting}
+            />
+            <Button
+              type="primary"
+              htmlType="submit"
+              size="large"
+              className="w-full bg-white text-blue-600 hover:bg-gray-100 border-none h-12 text-base font-semibold"
+              disabled={isSubmitting}
+              loading={isSubmitting}
+            >
+              {isSubmitting ? 'Отправка...' : 'Хочу попробовать'}
+            </Button>
+          </form>
+        )}
+        
+        <p className="text-sm opacity-75 mt-4">
+          Или напишите мне лично: @teplovata (telegram)
+        </p>
       </div>
     </section>
   );
@@ -357,7 +411,7 @@ const Footer: React.FC = () => {
           <span className="font-bold text-lg">e-not</span>
         </div>
         <p className="text-gray-400 text-sm">© 2026 Мини-приложение для продаж в мессенджерах.</p>
-        <p className="text-gray-400 text-sm">И да, этот сайт визитку я тоже сама написала, без мам, пап и Тильды</p>
+        <p className="text-gray-400 text-sm">И да, этот сайт написан своими руками, без пап, мам и Тильды</p>
       </div>
     </footer>
   );
