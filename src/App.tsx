@@ -12,7 +12,7 @@ import { IoMdPizza } from 'react-icons/io';
 import { GiClothes, GiFlowers } from 'react-icons/gi';
 import { BsShopWindow } from 'react-icons/bs';
 import toast, { Toaster } from 'react-hot-toast';
-import myPhoto from './assets/foto.jpeg'
+// import myPhoto from './assets/foto.jpeg'
 
 // Функция для уведомлений
 const notify = (message: string) => {
@@ -46,10 +46,10 @@ const Header: React.FC = () => {
         <div className="flex items-center space-x-2 sm:space-x-3">
           <Button
             type="text"
-            onClick={() => notify('Скоро здесь будет демо!')}
+            onClick={() => {window.open("https://t.me/ecomtgtest_bot", "_blank")}}
             className="hidden sm:inline-flex"
           >
-            Как работает
+            Пример магазина
           </Button>
           <Button
             type="primary"
@@ -263,28 +263,28 @@ const Pricing: React.FC = () => {
   );
 };
 
-const About: React.FC = () => {
-  return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
-          <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-blue-100">
-            <img 
-              src={myPhoto} 
-              alt="Полина - основатель e-not"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              «Я — Полина. 7 лет в маркетинге, знаю, как бесят потери клиентов и высокие комиссии. Ушла из найма, изучаю код и с поддержкой мужа-программиста написала идеальный инструмент для продаж в мессенджерах. Сама подключаю, сама поддерживаю, сама отвечаю за результат».
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+// const About: React.FC = () => {
+//   return (
+//     <section className="py-16 bg-white">
+//       <div className="container mx-auto px-4">
+//         <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl mx-auto">
+//           <div className="w-40 h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-blue-100">
+//             <img 
+//               src={myPhoto} 
+//               alt="Полина - основатель e-not"
+//               className="w-full h-full object-cover"
+//             />
+//           </div>
+//           <div>
+//             <p className="text-lg text-gray-700 leading-relaxed">
+//               «Я — Полина. 7 лет в маркетинге, знаю, как бесят потери клиентов и высокие комиссии. Ушла из найма, изучаю код и с поддержкой мужа-программиста написала идеальный инструмент для продаж в мессенджерах. Сама подключаю, сама поддерживаю, сама отвечаю за результат».
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 const CallToAction: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -292,7 +292,6 @@ const CallToAction: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-  // ВАШ КЛЮЧ С WEB3FORMS (замените на свой)
   const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
@@ -430,7 +429,7 @@ const App: React.FC = () => {
         <HowItWorks />
         <ForWhom />
         <Pricing />
-        <About />
+        {/* <About /> */}
         <CallToAction />
       </main>
       <Footer />
